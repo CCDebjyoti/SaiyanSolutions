@@ -4,7 +4,7 @@ public:
         //SC->  O(No of unique triplets)
     vector<vector<int>> threeSum(vector<int>& nums) {
         sort(nums.begin(),nums.end());
-        vector<vector<int>>ans;
+        vector<vector<int>>ans; // can use set also then no need to check for j=j-1 and k at last ans(st.begin(),st.end())
         for(int i=0;i<nums.size();i++){
             if(i>0 && nums[i]==nums[i-1])continue;
             int j=i+1;
