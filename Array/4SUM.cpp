@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // code is similar to 3 SUM just one extra loop and checking for if first time or not i!=l+1;
 public://fix l & i 
     // we only move 2 ptr at a time 3rd and 4th is constant 
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
