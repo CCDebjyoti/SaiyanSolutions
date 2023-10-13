@@ -9,7 +9,7 @@ int getLongestSubarray(vector<int>& nums, int k){
         sum+=nums[i];
       
         if(sum==k)
-        ans=max(ans,i+1);
+        ans=i+1;//till i sum==k so max is only this 
         
         if(Map.find(sum-k)!=Map.end())//Map[nums[sum-k]] dosenot work as index 0 so false for it 
         ans=max(ans,i-Map[sum-k]);
