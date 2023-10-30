@@ -13,6 +13,11 @@ public:
          Map[ptr]->random=Map[ptr->random];
          ptr=ptr->next;
         }
+        // OR 
+        for(auto it:Map){
+         if(it.first -> next)it.second->next=Map[it.first->next];
+         if(it.first -> random)it.second->random=Map[it.first->random];
+        }
         return Map[head];//return clone of head 
     }
 };
