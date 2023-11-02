@@ -1,3 +1,35 @@
+//O(N) recursive sol
+class Solution {
+public:
+    void solve(ListNode* head, int k,int cnt) {
+        if(head==NULL || cnt<k)return head;
+        ListNode*prev=NULL,*nex=NULL,*curr=head;
+        int count=0;
+        while(curr!=NULL && count<k){
+            nex=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=nex;
+            count++;
+        }
+        if(nex!=NULL)head->next=solve(nex,k,cnt-k);
+        return prev;
+    }
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        int cnt=0;
+        ListNode*ptr=head;
+        while(ptr!=NULL){
+            ptr=ptr->next;
+            cnt++;
+        }
+        return solve(head,k,cnt);
+    }
+};
+
+
+//Optimal O(1)
+
+
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
