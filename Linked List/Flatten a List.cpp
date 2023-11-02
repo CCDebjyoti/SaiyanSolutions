@@ -38,3 +38,21 @@ Node *flatten(Node *root)
    }
    return ans;
 }
+// RECURSIVELY
+Node *flatten(Node *head)
+{
+   // Your code here
+    if(head==NULL || head->next==NULL) return head;
+
+    Node* down=head;
+    //traverse right l1->l2->l3 ...... till end 
+    Node* right=flatten(head->next);
+ 
+    down->next=NULL;
+    // merege and assign to current one 
+    Node* ans=merge(down,right);
+
+    return ans;
+
+ 
+}
