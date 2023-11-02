@@ -16,6 +16,10 @@ public:
         return prev;
     }
     ListNode* reverseKGroup(ListNode* head, int k) {
+      /*   int t=0; // Another way to break and stop if not reach k
+        ListNode* prev=nullptr, *check=curr;
+        while(t<k && check!=nullptr) check=check->next,t++;
+        if(t<k) return curr; */
         int cnt=0;
         ListNode*ptr=head;
         while(ptr!=NULL){
