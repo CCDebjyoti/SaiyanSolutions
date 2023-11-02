@@ -17,12 +17,7 @@ public:
                 l2=l2->next;
             }
         }
-        if(l1!=NULL){
-            zero->next=l1;
-        }
-        if(l2!=NULL){
-            zero->next=l2;
-        }
+        zero->next=l1?l1:l2;
         return zerohd->next;
 
     }
