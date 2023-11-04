@@ -1,5 +1,6 @@
    //LOWER BOUND STL
 	vector<int>::iterator low = lower_bound(arr.begin(),arr.end(),x);
+        auto low=lower_bound(arr.begin(),arr.end(),x); //works also
 	return low-arr.begin();
     //Implementation
     int lowerBound(vector<int> nums, int n, int target) {
