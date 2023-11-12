@@ -7,7 +7,7 @@ int findKRotation(vector<int> &nums){
        while(low<=high){
         int mid =low +(high -low)/2; // same find minimum element and just return index and equal to no of rotations 
          if(nums[low]<=nums[high]){
-              if(nums[low]<ans){
+              if(nums[low]<ans){//update index if updating minimum
                 indx=low;
                 ans=nums[low];
             }
