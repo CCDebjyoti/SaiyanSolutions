@@ -7,6 +7,11 @@
         if(nums[mid]==target){
                 return mid;
             }
+        /*    if(v[i]==v[m] && v[m]==v[j]){   // for dups //shrink search space 
+                i++;
+                j--;
+                continue;
+            } */
         else if(nums[high]>=nums[mid]){ //right sorted
             if(nums[mid]<=target && nums[high]>=target){//target lies in right part 
                 low=mid+1;
