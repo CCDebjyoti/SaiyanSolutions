@@ -9,7 +9,7 @@ public:
     }
     int smallestDivisor(vector<int>& nums, int threshold) {
         int n=nums.size();
-        int low=1;// why 1 
+        int low=1;// why 1 as lowest divisor possible is 1 and cnt be less than that 
         int high=*max_element(nums.begin(),nums.end());
         while(low<=high){
             int mid=low+(high-low)/2;
