@@ -1,36 +1,21 @@
-int maxMeetings(int start[], int end[], int n)
-    {
-        // Your code here
-        vector<pair<int,int>>time;
-        for(int i=0;i<n;i++){
-            time.push_back({end[i],start[i]});
+class Solution {
+  public:
+    int maxMeetings(vector<int>& S, vector<int>& F) {
+        int N=S.size();//if we choose a meeting we cant have another meeting before the end time of last meeting 
+        vector<vector<int>>str;
+        for(int i=0;i<N;i++){
+            str.push_back({F[i],S[i]});
         }
-        sort(time.begin(),time.end());
-        int ans=1,endx=time[0].first;
-        for(int i=1;i<n;i++){
-            if(time[i].second>endx){//start > last end time
-                ans++;
-                endx=time[i].first;//last ending saving so not equal to start 
+        sort(str.begin(),str.end());//sorting based on end times as earliest finish one
+        int ans1=1;//min one meeting will occur
+        int freetime=str[0][0];//meeting that ends the quickest
+        for(int i=1;i<N;i++){
+            if(str[i][1]>freetime){//strict freetime
+                ans1++;
+                freetime=str[i][0];//update new freetime
             }
         }
-        return ans;
+        return ans1;
     }
-// multi map
-int maxMeetings(int start[], int end[], int n)
-    {
-        // Your code here
-        multimap<int,int> mp;
-        for(int i=0;i<n;i++)
-            mp.insert(pair<int, int>(end[i], start[i]));
-        int cnt = 1;
-        int temp = mp.begin()->first;
-        for(auto it:mp)
-        {
-            if(temp< it.second)
-            {    
-                cnt++;
-                temp = it.first;
-            }
-        }
-        return cnt;
-    }
+   
+};
