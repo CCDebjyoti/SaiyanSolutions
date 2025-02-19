@@ -16,7 +16,7 @@ int candy(vector<int>& ratings) {//better
         return sumx;
     }
 //OPTIMAL
-int candy(vector<int>& ratings) {
+int candy(vector<int>& ratings) {//1 2 3 4 == 4 3 2 1 expect peak val only possible different 
         int n=ratings.size();
         int i=1;
         int sum=1;
