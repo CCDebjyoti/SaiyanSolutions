@@ -2,9 +2,9 @@ class Solution {
 public: 
     vector<vector<int>>ans;
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-        vector<int>op;
-        sort(nums.begin(),nums.end());
-        helper(0,nums.size(),op,nums);
+        vector<int>op;//3. We can achieve it by counting only one occurrence of an element and skipping all its rest occurrences in arr[]
+        sort(nums.begin(),nums.end());//4. We need to first sort the given vector arr[]
+        helper(0,nums.size(),op,nums);//5. For don't pick condition, we will first check whether arr[i]==arr[i+1] or not. If so, we will ignore the rest occurrences of that particular element.
         return ans;
     }
     void helper(int ind,int n,vector<int>&op,vector<int>&nums){
