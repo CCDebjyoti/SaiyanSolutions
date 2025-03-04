@@ -1,13 +1,10 @@
-int ans=0;
-    void depth(TreeNode*root,int height){
-        if(root==NULL){
-            ans=max(ans,height);
-            return ;
-        }
-        depth(root->left,height+1);
-        depth(root->right,height+1);
-    }
+class Solution {
+public:
     int maxDepth(TreeNode* root) {
-        depth(root,0);
-        return ans;
+        if(root == NULL)
+            return 0;
+        int lh = maxDepth(root->left);
+        int rh = maxDepth(root->right);
+        return max(lh, rh) + 1;
     }
+};
