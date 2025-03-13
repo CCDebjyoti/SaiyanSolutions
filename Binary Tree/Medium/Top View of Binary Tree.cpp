@@ -6,9 +6,9 @@ vector<int> topView(Node *root) {
         while(!q.empty()){//as we traverse one level at a time so we dont need to store levels
             auto it=q.front();//first in map level always above the nodes we traverse later 
             Node*temp=q.front().first;
-            int level=q.front().second;
+            int level=q.front().second;//normal level traversal
             q.pop();
-            if(Map.find(level)==Map.end()){//normal level traversal
+            if(Map.find(level)==Map.end()){//for top view and bottom view just add in map
                 Map[level]=temp->data;
             }
             if(temp->left){
