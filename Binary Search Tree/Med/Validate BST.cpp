@@ -7,6 +7,5 @@ public://for left it cannot have a val greater than root
     }
     bool isValidBST(TreeNode* root) {
        return solve(root,LLONG_MIN,LLONG_MAX);
-
     }
 };
