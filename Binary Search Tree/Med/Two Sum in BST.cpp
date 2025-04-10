@@ -1,5 +1,5 @@
 class BSTIterator {//TC-O(N) SC-2*O(H) as two stacks one for before one for next
-public:
+public://false-- next //true - before
     stack<TreeNode*>st;
     bool reverse=true;
     BSTIterator(TreeNode* root,bool isReverse) {
